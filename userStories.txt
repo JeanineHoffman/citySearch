@@ -1,0 +1,19 @@
+A user should be able to:
+
+  pick a city and state to research
+
+  navigate via keyboard
+
+  navigate with a screen reader
+
+  get results of a map and pictures
+
+  restart their search
+
+  view data on various stats for the city
+
+  view a picture of the city
+
+  view a basic city map
+
+  
