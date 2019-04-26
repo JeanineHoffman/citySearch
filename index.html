@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>City Lookup</title>
+  <title>City Look-up</title>
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <!-- <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
@@ -12,8 +12,53 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css"> 
 </head>
+<body>
+<header role="banner" aria-label="title banner">
+  <!-- working title -->
+  <h1>City Look-up</h1>
+</header>
+<main role="main">
+<section role="img" aria-placeholder="image of a city">
 
-
+<img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
+</section>
+<section role="form" aria-multiselectable="drop down forms">
+  <form  name="City, ST" value="">
+      <select name="data types" aria-label="dropsdown data selection">
+          <option value="Portland, OR">Portland, OR</option>
+          <option value="San Franscisco, CA">San Franscisco, CA</option>
+          <option value="Pittsburgh, PA">Pittsburgh, PA</option>
+          <option value="Los Angelos, CA">Los Angelos, CA</option>
+        </select>
+  </form>
+  <form name="data-search-1" value="">
+    <select name="data types" aria-label="dropsdown data selection">
+      <option value="crime statistics">Crime statistics</option>
+      <option value="parks">Parks</option>
+      <option value="walkability">Walkability</option>
+      <option value="mass transit">Mass Transit</option>
+    </select>
+  </form>
+  <form name="data-search-2" value="">
+    <select name="data types" aria-label="dropsdown data selection">
+      <option value="crime statistics">Crime statistics</option>
+      <option value="parks">Parks</option>
+      <option value="walkability">Walkability</option>
+      <option value="mass transit">Mass Transit</option>
+    </select>
+  </form>
+  <form name="data-search-3" value="">
+    <select name="data types" aria-label="dropsdown data selection">
+      <option value="crime statistics">Crime statistics</option>
+      <option value="parks">Parks</option>
+      <option value="walkability">Walkability</option>
+      <option value="mass transit">Mass Transit</option>
+    </select>
+  </form>
+  <section role="contentinfo" aria-label="results section" class="hidden"></section>
+  <button type="submit" name="Start Search">Start Search</button>
+</section>
+</main>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="index.js"></script>
 </body>
