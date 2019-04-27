@@ -65,7 +65,7 @@ function testTeleport() {
      const qualityOfLife = data[0];
      const qualityOfSalaries = data[1];
 
-     console.log(data[0].message, data[1].message) 
+     console.log(data[0], data[1]) 
 
      displayResults(qualityOfLife);
      displaySalaries(qualityOfSalaries);
