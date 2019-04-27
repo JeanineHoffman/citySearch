@@ -1,7 +1,68 @@
-*{
-  box-sizing: border-box;
+
+
+/* GENERAL Styles                    
+   -------------------------------- */
+:root {
+  --gray1: #777;
 }
 
-.hidden{
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hidden {
   display: none;
 }
+
+
+
+
+/* TELEPORT INFO Styles                    
+   -------------------------------- */
+.graph-cont {
+  width: 100%;
+  height: .6em;
+  background-color: #eee;
+}
+
+.bar-graph {
+  width: 10%;
+  height: 100%;
+  background-color: #555;
+}
+
+.score {
+  font-size: .9em;
+}
+
+.category-title {
+  margin-bottom: .5em;
+  display: flex;
+  justify-content: space-between;
+  font-size: .9em;
+}
+
+.category-title span:first-child {
+  font-weight: 600;
+}
+
+div[id*="item-"] {
+  width: 200px;
+  padding: .5em 0;
+  border-top: 1px dotted var(--gray1);
+}
+
+
+
+
+/* MAPBOX Styles                    
+   -------------------------------- */
+   #map {
+    /* position: absolute;
+    top: 0;
+    bottom: 0; */
+    /* width: 100%; */
+    width: 480px;
+    height: 270px;
+  }
