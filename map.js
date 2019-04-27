@@ -15,7 +15,7 @@
 // </script>`) 
 // }
 
-function getCityLatLong()
+function getCityLatLong(){
 const textName = $('.citySt').val();
 const apiKey='sk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1eXhvc2Y3MTJ2MzQzcHAzOGdybHcxbyJ9.Y5pWdiwa9_I4yGgPnKYAmA';
 
@@ -29,7 +29,7 @@ fetch('https://api.mapbox.com/geocoding/v5/mapbox.places/$(textName).json?access
     .catch(err, function(event)  {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     })
-
+  }
 function getMap(long, lat) {
     const params = {
       cityLocation: long, lat,
@@ -53,7 +53,7 @@ function getMap(long, lat) {
   }
   
 
-endpoint: https://api.mapbox.com/v4/mapbox.satellite.json?access_token=pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw
 
-let token = 'sk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1eXhvc2Y3MTJ2MzQzcHAzOGdybHcxbyJ9.Y5pWdiwa9_I4yGgPnKYAmA';
+
+// let token = 'sk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1eXhvc2Y3MTJ2MzQzcHAzOGdybHcxbyJ9.Y5pWdiwa9_I4yGgPnKYAmA';
 
