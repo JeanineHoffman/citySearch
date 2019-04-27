@@ -41,23 +41,6 @@ console.log(resultsHTML);
 $('#results-list').append(resultsHTML);
 };
 
-
-function testTeleport() {
-<<<<<<< HEAD
-  const searchURL = `https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores`;
-  fetch(searchURL)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then(responseJson => displayResults(responseJson))
-    .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      $('#results').addClass('hidden');
-    });
-=======
   const searchURLs = [`https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores`,
   `https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/salaries`]
   console.log(searchURLs);
@@ -70,9 +53,8 @@ function testTeleport() {
       //$('#js-error-message').text(`Something went wrong: ${err.message}`);
       //$('#results').addClass('hidden');console.log(responseJson);
   ))
-  
+  // calls all teleport functions simultaneously
   .then(data => {
-    console.log(data);
      const qualityOfLife = data[0];
      const qualityOfSalaries = data[1];
 
@@ -82,7 +64,7 @@ function testTeleport() {
      displaySalaries(qualityOfSalaries);
 
   })
-}
+
     
 function checkResults(response){
   if (response.ok) {
@@ -90,7 +72,6 @@ function checkResults(response){
    return Promise.resolve(response);
   } 
   throw new Error(response.statusText);
->>>>>>> multiTeleport
 }
 
 /*function handleJson(response){
