@@ -15,7 +15,7 @@
 
 function randomQual(a, b, type) {
     let num = a + Math.random() * (b - a);
-    switch(type) {
+    switch (type) {
         case 1:
             num *= 1000;
             break;
@@ -27,7 +27,7 @@ function randomQual(a, b, type) {
     return Math.round(num);
 }
 
-function displayResults(){//responseJson) {
+function displayResults() {//responseJson) {
     let cityData = {
         name: "New York",
         costLiving: randomQual(1, 5, 1),
@@ -47,11 +47,11 @@ function displayResults(){//responseJson) {
 
 }
 
-const main = () => {
-    getCityCoordinates('portland');
-}
+// const main = () => {
+//     getCityCoordinates('portland');
+// }
 
-$(main);
+// $(main);
 // $(watchForm);
 
 
@@ -100,13 +100,12 @@ $(main);
 //   $('.searchresults').removeClass('hidden');
 // }
 
-// function watchForm() {
-//   $('form').submit(event => {
-//     event.preventDefault();
-//     const searchTerm = $('#state-search').val();
-//     const maxResults = $('#limit-input').val();
-//     getStateParks(searchTerm, maxResults);
-//   });
-// }
+function watchForm() {
+    $('#city-search-form').submit(event => {
+        event.preventDefault();
+        const searchTerm = $('#city-search-form').find('option:selected').attr("name");
+        getCityCoordinates(searchTerm);
+    });
+}
+$(watchForm);
 
-// $(watchForm);
