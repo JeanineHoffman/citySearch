@@ -10,21 +10,22 @@ const loadMap = (cityCoordinates) => {
     center: cityCoordinates, // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
+  $('.hidden').toggleClass('hidden');
 }
 
 
-function renderCityMap() {
-  let cityLatLong = cityGeoCodeInfo.features[0].center;
-  return $('.jsMapReturn').join(
-    `<div id='map' style='width: 400px; height: 300px;'></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-    });
-    </script>`)
-}
+// function renderCityMap() {
+//   let cityLatLong = cityGeoCodeInfo.features[0].center;
+//   return $('.jsMapReturn').join(
+//     `<div id='map' style='width: 400px; height: 300px;'></div>
+//     <script>
+//     mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
+//     var map = new mapboxgl.Map({
+//       container: 'map',
+//       style: 'mapbox://styles/mapbox/streets-v11'
+//     });
+//     </script>`)
+// }
 
 
 // function getCityLatLong(){
@@ -83,8 +84,9 @@ function getCityCoordinates(cityName) {
       throw new Error(response.statusText);
     })
     .then(cityGeoCodeInfo => {
-      console.log(cityGeoCodeInfo.features[0].center);
+      //console.log(cityGeoCodeInfo.features[0].center);
       let coords = cityGeoCodeInfo.features[0].center;
+      console.log(coords);
       loadMap(coords);
     });
 }

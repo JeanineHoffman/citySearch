@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>City Look-up</title>
   <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' /> 
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
@@ -14,59 +15,60 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Kalam|Knewave" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
-<body>
-<header role="banner" aria-label="title banner">
-  <!-- working title -->
-  <h1>City Look-up</h1>
-</header>
-<main role="main">
-<section role="img" aria-placeholder="image of a city">
 
-<img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
-</section>
-<section role="form" aria-multiselectable="drop down forms">
-  <form  name="City, ST" value="">
-      <select class="citySt" name="data types" aria-label="dropsdown data selection">
+<body>
+  <header role="banner" aria-label="title banner">
+    <!-- working title -->
+    <h1>City Look-up</h1>
+  </header>
+  <main role="main">
+    <section role="img" aria-placeholder="image of a city">
+
+      <img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
+    </section>
+    <section role="form" aria-multiselectable="drop down forms">
+      <form name="City, ST" value="">
+        <select class="citySt" name="data types" aria-label="dropsdown data selection">
           <option value="Portland, OR">Portland, OR</option>
           <option value="San Franscisco, CA">San Franscisco, CA</option>
           <option value="Pittsburgh, PA">Pittsburgh, PA</option>
           <option value="Los Angelos, CA">Los Angelos, CA</option>
         </select>
-  </form>
-  <form name="data-search-1" value="">
-    <select name="data types" aria-label="dropsdown data selection">
-      <option value="crime statistics">Crime statistics</option>
-      <option value="parks">Parks</option>
-      <option value="walkability">Walkability</option>
-      <option value="mass transit">Mass Transit</option>
-    </select>
-  </form>
-  <form name="data-search-2" value="">
-    <select name="data types" aria-label="dropsdown data selection">
-      <option value="crime statistics">Crime statistics</option>
-      <option value="parks">Parks</option>
-      <option value="walkability">Walkability</option>
-      <option value="mass transit">Mass Transit</option>
-    </select>
-  </form>
-  <form name="data-search-3" value="">
-    <select name="data types" aria-label="dropsdown data selection">
-      <option value="crime statistics">Crime statistics</option>
-      <option value="parks">Parks</option>
-      <option value="walkability">Walkability</option>
-      <option value="mass transit">Mass Transit</option>
-    </select>
-  </form>
-  <section role="contentinfo" aria-label="results section" class="hidden">
-    <div id="map"></div>
-    <div class="jsDataReturn"></div>
-  </section>
-  <button type="submit" class="submitBtn"name="Start Search">Start Search</button>
-</section>
-</main>
-<!-- <div id='map' style='width: 400px; height: 300px;'></div>
+      </form>
+      <form name="data-search-1" value="">
+        <select name="data types" aria-label="dropsdown data selection">
+          <option value="crime statistics">Crime statistics</option>
+          <option value="parks">Parks</option>
+          <option value="walkability">Walkability</option>
+          <option value="mass transit">Mass Transit</option>
+        </select>
+      </form>
+      <form name="data-search-2" value="">
+        <select name="data types" aria-label="dropsdown data selection">
+          <option value="crime statistics">Crime statistics</option>
+          <option value="parks">Parks</option>
+          <option value="walkability">Walkability</option>
+          <option value="mass transit">Mass Transit</option>
+        </select>
+      </form>
+      <form name="data-search-3" value="">
+        <select name="data types" aria-label="dropsdown data selection">
+          <option value="crime statistics">Crime statistics</option>
+          <option value="parks">Parks</option>
+          <option value="walkability">Walkability</option>
+          <option value="mass transit">Mass Transit</option>
+        </select>
+      </form>
+      <section role="contentinfo" aria-label="results section" class="hidden">
+        <div id="map"></div>
+        <div class="jsDataReturn"></div>
+      </section>
+      <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
+    </section>
+  </main>
+  <!-- <div id='map' style='width: 400px; height: 300px;'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
 var map = new mapboxgl.Map({
@@ -74,13 +76,14 @@ container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11'
 });
 </script> -->
-<!-- adding div so shawn can play with the code-->
+  <!-- adding div so shawn can play with the code-->
 
 
 
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="index.js"></script>
-<script src="teleport.js"></script>
-<script src="map.js"></script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script src="teleport.js"></script>
+  <script src="map.js"></script>
 </body>
+
 </html>
