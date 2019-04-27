@@ -17,18 +17,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
-
 <body>
   <header role="banner" aria-label="title banner">
     <!-- working title -->
     <h1>City Look-up</h1>
   </header>
   <main role="main">
-    <section role="img" aria-placeholder="image of a city">
+    <section class="leadImg"role="img" aria-placeholder="image of a city">
 
-      <img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
+      <img  src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
     </section>
-    <section role="form" aria-multiselectable="drop down forms">
+    <section  role="form" aria-multiselectable="drop down forms">
       <form name="City, ST" id="city-search-form" value="">
         <select class="citySt" name="data types" aria-label="dropsdown data selection">
           <option name="portland,or" value="portland-or">Portland, OR</option>
@@ -44,6 +43,7 @@
         </select>
         <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
       </form>
+    </section>
       <!-- <form name="data-search-1" value="">
         <select name="data types" aria-label="dropsdown data selection">
           <option value="crime statistics">Crime statistics</option>
@@ -72,7 +72,6 @@
         <div id="map"></div>
         <div class="jsDataReturn"></div>
       </section>
-    </section>
   </main>
   <!-- <div id='map' style='width: 400px; height: 300px;'></div>
 <script>
