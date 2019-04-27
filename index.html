@@ -64,7 +64,10 @@
       <option value="mass transit">Mass Transit</option>
     </select>
   </form>
-  <section role="contentinfo" aria-label="results section" class="hidden"></section>
+  <section role="contentinfo" aria-label="results section" class="hidden">
+    <div class="jsMapReturn"></div>
+    <div class="jsDataReturn"></div>
+  </section>
   <button type="submit" name="Start Search">Start Search</button>
 </section>
 </main>
@@ -78,18 +81,6 @@ style: 'mapbox://styles/mapbox/streets-v11'
 </script> -->
 <!-- adding div so shawn can play with the code-->
 
-<div id='map'></div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
-var map = new mapboxgl.Map({
-container: 'map', // container id
-style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
-center: [-74.50, 40], // starting position [lng, lat]
-zoom: 9 // starting zoom
-});
-</script>
-
-<div id="results-list"></div>
 
 
 <script src="//code.jquery.com/jquery.min.js"></script>
