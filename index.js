@@ -3,6 +3,24 @@
 
 
 
+const loadMap = (cityCoordinates) => {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
+      center: cityCoordinates, // starting position [lng, lat]
+      zoom: 9 // starting zoom
+    });
+}
+
+let coords = [-118.2439, 34.0544];
+loadMap(coords);
+getCityCoordinates("Los Angeles");
+
+
+
+
+
 
 
 // let STORE = {
@@ -111,3 +129,33 @@ $(main);
 // }
 
 // $(watchForm);
+
+
+
+
+function getCityCoordinates(cityName) {
+  const searchURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
+  const accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw'
+  const queryString = `${encodeURIComponent(cityName)}.json?`//formatQueryParams(params)
+  const url = searchURL + queryString + `access_token=${accessToken}`;
+
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        let responseJson = response.json();
+        console.log(responseJson);
+        return responseJson;
+      }
+      throw new Error(response.statusText);
+    })
+    // .then(responseJson => displayResults(responseJson))
+    // .catch(err => {
+    //   $('#js-error-message').text(`Something went wrong: ${err.message}`);
+    // });
+}
+
+function formatQueryParams(params) {
+    const queryItems = Object.keys(params)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItems.join('&');
+  }
