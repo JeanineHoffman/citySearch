@@ -68,10 +68,10 @@ const loadMap = (cityCoordinates) => {
 //       });
 //   }
 
-function getCityCoordinates(cityName) {
+function getCityMap(cityName) {
   const searchURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
-  const accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw'
-  const queryString = `${encodeURIComponent(cityName)}.json?`//formatQueryParams(params)
+  const accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
+  const queryString = `${encodeURIComponent(cityName)}.json?`;
   const url = searchURL + queryString + `access_token=${accessToken}`;
 
   fetch(url)
@@ -84,9 +84,8 @@ function getCityCoordinates(cityName) {
       throw new Error(response.statusText);
     })
     .then(cityGeoCodeInfo => {
-      //console.log(cityGeoCodeInfo.features[0].center);
       let coords = cityGeoCodeInfo.features[0].center;
-      console.log(coords);
+      //console.log(coords);
       loadMap(coords);
     });
 }
@@ -99,7 +98,3 @@ function watchForm() {
     getCityLatLong()
   });
 }
-
-
-// let token = 'sk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1eXhvc2Y3MTJ2MzQzcHAzOGdybHcxbyJ9.Y5pWdiwa9_I4yGgPnKYAmA';
-

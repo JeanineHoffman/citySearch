@@ -103,8 +103,10 @@ function displayResults() {//responseJson) {
 function watchForm() {
     $('#city-search-form').submit(event => {
         event.preventDefault();
-        const searchTerm = $('#city-search-form').find('option:selected').attr("name");
-        getCityCoordinates(searchTerm);
+        const mapboxSearchTerm = $('#city-search-form').find('option:selected').attr("name");
+        const teleportSearchTerm = $('#city-search-form .citySt').val();
+        getCityMap(mapboxSearchTerm);
+        getCityStats(teleportSearchTerm);
     });
 }
 $(watchForm);

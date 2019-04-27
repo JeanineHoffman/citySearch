@@ -26,59 +26,54 @@ function displayResults(teleportTester) {
 };
 
 function displaySalaries(teleportTester) {
-let resultsHTML = teleportTester.salaries.map((item, index) => {
-  let barWidth = item.percentile_50;
-  console.log(barWidth);
-  let salary = item.percentile_50 ;
-  return `<div id="item-${index}">
+  let resultsHTML = teleportTester.salaries.map((item, index) => {
+    let barWidth = item.percentile_50;
+    console.log(barWidth);
+    let salary = item.percentile_50;
+    return `<div id="item-${index}">
     <div class="category-title"><span>${item.job.id}</span><span>${salary}</span></div>
     <div class="graph-cont">
       <div class="bar-graph" style="width:${barWidth};"></div>
     </div>
   </div>`
-}).join('');
-console.log(resultsHTML);
-$('#results-list').append(resultsHTML);
+  }).join('');
+  //console.log(resultsHTML);
+  $('#results-list').append(resultsHTML);
 };
 
-  const searchURLs = [`https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores`,
-  `https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/salaries`]
-  console.log(searchURLs);
+function getCityStats(placeName) {
+  let teleportBaseURL = 'https://api.teleport.org/api/urban_areas/slug:';
+  //let placeName = 'san-francisco-bay-area';
+  const searchURLs = [`${teleportBaseURL}${placeName}/scores`, `${teleportBaseURL}${placeName}/salaries`];
+  //console.log(searchURLs);
   Promise.all(searchURLs.map(url =>
     fetch(url)
-    .then(checkResults)
-    .then(response => response.json())
+      .then(checkResults)
+      .then(response => response.json())
     //.then(responseJson => displayResults(responseJson))
     //.catch(err => {
-      //$('#js-error-message').text(`Something went wrong: ${err.message}`);
-      //$('#results').addClass('hidden');console.log(responseJson);
+    //$('#js-error-message').text(`Something went wrong: ${err.message}`);
+    //$('#results').addClass('hidden');console.log(responseJson);
   ))
-  // calls all teleport functions simultaneously
-  .then(data => {
-     const qualityOfLife = data[0];
-     const qualityOfSalaries = data[1];
+    // calls all teleport functions simultaneously
+    .then(data => {
+      const qualityOfLife = data[0];
+      const qualityOfSalaries = data[1];
 
-     console.log(data[0], data[1]) 
+      console.log(data[0], data[1])
 
-     displayResults(qualityOfLife);
-     displaySalaries(qualityOfSalaries);
+      displayResults(qualityOfLife);
+      displaySalaries(qualityOfSalaries);
 
-  })
+    })
+}
 
-    
-function checkResults(response){
+function checkResults(response) {
   if (response.ok) {
     console.log(response);
-   return Promise.resolve(response);
-  } 
+    return Promise.resolve(response);
+  }
   throw new Error(response.statusText);
 }
 
-/*function handleJson(response){
-  console.log(response);
-  return response.json();
-}*/
-
-
-
-      // displays an unordered list of the categories and the score associated with them
+//getAllTeleportData();
