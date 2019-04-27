@@ -5,18 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>City Look-up</title>
-  
-  <!-- <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' /> -->
+  <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' /> 
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  
-
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
-
   <!-- <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
-  
   <link href="https://fonts.googleapis.com/css?family=Kalam|Knewave" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css"> 
@@ -65,10 +60,10 @@
     </select>
   </form>
   <section role="contentinfo" aria-label="results section" class="hidden">
-    <div class="jsMapReturn"></div>
+    <div id="map"></div>
     <div class="jsDataReturn"></div>
   </section>
-  <button type="submit" name="Start Search">Start Search</button>
+  <button type="submit" class="submitBtn"name="Start Search">Start Search</button>
 </section>
 </main>
 <!-- <div id='map' style='width: 400px; height: 300px;'></div>

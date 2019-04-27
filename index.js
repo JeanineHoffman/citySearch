@@ -48,8 +48,9 @@ function displayResults(){//responseJson) {
 }
 
 const main = () => {
-    testTeleport();
+    // testTeleport();
     //displayResults();
+    getCityCoordinates('portland');
 }
 
 $(main);
