@@ -29,15 +29,22 @@
       <img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
     </section>
     <section role="form" aria-multiselectable="drop down forms">
-      <form name="City, ST" value="">
+      <form name="City, ST" id="city-search-form" value="">
         <select class="citySt" name="data types" aria-label="dropsdown data selection">
-          <option value="Portland, OR">Portland, OR</option>
-          <option value="San Franscisco, CA">San Franscisco, CA</option>
-          <option value="Pittsburgh, PA">Pittsburgh, PA</option>
-          <option value="Los Angelos, CA">Los Angelos, CA</option>
+          <option name="portland,or" value="portland-or">Portland, OR</option>
+          <!-- <option name="san jose, ca" value="san-jose">San Jose, CA</option> -->
+          <option name="boston,ma" value="boston">Boston, MA</option>
+          <option name="new york,ny" value="new-york">NYC, NY</option>
+          <option name="des moines,ia" value="des-moines">Des-Moines, IA</option>
+          <option name="phoenix,az" value="phoenix">Phoenix, AZ</option>
+          <option name="salt lake city,ut" value="salt-lake-city">Salt Lake City, UT</option>
+          <option name="los angeles,ca" value="los-angeles">Los Angeles, CA</option>
+          <option name="charlotte,nc" value="charlotte">Charlotte, NC</option>
+          <option name="seattle,wa" value="seattle">Seattle, WA</option>
         </select>
+        <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
       </form>
-      <form name="data-search-1" value="">
+      <!-- <form name="data-search-1" value="">
         <select name="data types" aria-label="dropsdown data selection">
           <option value="crime statistics">Crime statistics</option>
           <option value="parks">Parks</option>
@@ -59,13 +66,12 @@
           <option value="parks">Parks</option>
           <option value="walkability">Walkability</option>
           <option value="mass transit">Mass Transit</option>
-        </select>
-      </form>
+        </select> -->
+      <!-- </form> -->
       <section role="contentinfo" aria-label="results section" class="hidden">
         <div id="map"></div>
         <div class="jsDataReturn"></div>
       </section>
-      <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
     </section>
   </main>
   <!-- <div id='map' style='width: 400px; height: 300px;'></div>
