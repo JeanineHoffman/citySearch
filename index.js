@@ -3,7 +3,6 @@
 
 
 
-//console.log(responseJson);
 
 
 // let STORE = {
@@ -62,8 +61,6 @@ $(main);
 
 
 
-// const apiKey = 'PgnZNBF1eFlwu12cj9iDVet20makkg9JMroA4RlY'; 
-// const searchURL = 'https://developer.nps.gov/api/v1/parks';
 
 // function formatQueryParams(params) {
 //   const queryItems = Object.keys(params)

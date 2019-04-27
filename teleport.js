@@ -3,7 +3,6 @@
 //
 
 function displayResults(teleportTester) {
-  //console.log(teleportTester);
   // for (let test in teleportTester.categories) {//let i = 0; i < listOfRepos.length; i++
   //   $('#results-list').append(
   //     `<div>
@@ -13,10 +12,8 @@ function displayResults(teleportTester) {
   // }
   //for (let test in teleportTester.categories) {
   //let categories = teleportTester.categories;
-  //console.log(teleportTester.categories[4]);
   let resultsHTML = teleportTester.categories.map((item, index) => {
     let barWidth = `${item.score_out_of_10 * 10}%`;
-    console.log(barWidth);
     let score = Math.round(item.score_out_of_10 * 10) / 10;
     return `<div id="item-${index}">
       <div class="category-title"><span>${item.name}</span><span>${score}</span></div>
@@ -25,14 +22,12 @@ function displayResults(teleportTester) {
       </div>
     </div>`
   }).join('');
-  console.log(resultsHTML);
   $('#results-list').append(resultsHTML);
 };
 
 
 function testTeleport() {
   const searchURL = `https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores`;
-  //console.log(searchURL);
   fetch(searchURL)
     .then(response => {
       if (response.ok) {
