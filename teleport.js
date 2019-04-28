@@ -1,17 +1,6 @@
 'use strict';
 
-//
-
 function displayResults(teleportTester) {
-  // for (let test in teleportTester.categories) {//let i = 0; i < listOfRepos.length; i++
-  //   $('#results-list').append(
-  //     `<div>
-  //       <h3>${Object.values(teleportTester.categories[test])}</a></h3>
-  //     </div>`
-  //   )
-  // }
-  //for (let test in teleportTester.categories) {
-  //let categories = teleportTester.categories;
   let resultsHTML = teleportTester.categories.map((item, index) => {
     let barWidth = `${item.score_out_of_10 * 10}%`;
     let score = Math.round(item.score_out_of_10 * 10) / 10;
@@ -28,7 +17,7 @@ function displayResults(teleportTester) {
 function displaySalaries(teleportTester) {
   let resultsHTML = teleportTester.salaries.map((item, index) => {
     let barWidth = item.percentile_50;
-    console.log(barWidth);
+    //console.log(barWidth);
     let salary = item.percentile_50;
     return `<div id="item-${index}">
     <div class="category-title"><span>${item.job.id}</span><span>${salary}</span></div>
@@ -43,34 +32,29 @@ function displaySalaries(teleportTester) {
 
 function getCityStats(placeName) {
   let teleportBaseURL = 'https://api.teleport.org/api/urban_areas/slug:';
-  //let placeName = 'san-francisco-bay-area';
   const searchURLs = [`${teleportBaseURL}${placeName}/scores`, `${teleportBaseURL}${placeName}/salaries`];
-  //console.log(searchURLs);
   Promise.all(searchURLs.map(url =>
     fetch(url)
       .then(checkResults)
       .then(response => response.json())
-    //.then(responseJson => displayResults(responseJson))
-    //.catch(err => {
-    //$('#js-error-message').text(`Something went wrong: ${err.message}`);
+      //.then(responseJson => displayResults(responseJson))
+      .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      })))
     //$('#results').addClass('hidden');console.log(responseJson);
-  ))
     // calls all teleport functions simultaneously
     .then(data => {
       const qualityOfLife = data[0];
       const qualityOfSalaries = data[1];
-
-      console.log(data[0], data[1])
-
+      //console.log(data[0], data[1])
       displayResults(qualityOfLife);
       displaySalaries(qualityOfSalaries);
-
     })
 }
 
 function checkResults(response) {
   if (response.ok) {
-    console.log(response);
+    //console.log(response);
     return Promise.resolve(response);
   }
   throw new Error(response.statusText);
