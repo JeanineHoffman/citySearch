@@ -47,7 +47,7 @@ form{
 .graph-cont {
   width: 100%;
   height: .6em;
-  background-color: #eee;
+  background-color: #f7f7f7;
 }
 
 .bar-graph {
@@ -90,4 +90,5 @@ div[id*="item-"] {
     width: 480px;
     height: 270px;
     margin-top: 7%;
+    margin-bottom: 7%;
   }
