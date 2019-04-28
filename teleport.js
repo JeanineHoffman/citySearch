@@ -48,7 +48,7 @@ function getCityStats(placeName) {
       const qualityOfSalaries = data[1];
       //console.log(data[0], data[1])
       displayResults(qualityOfLife);
-      displaySalaries(qualityOfSalaries);
+      // displaySalaries(qualityOfSalaries);
     })
 }
 
