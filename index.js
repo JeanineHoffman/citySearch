@@ -9,6 +9,7 @@ function watchForm() {
         $("#results-list").empty();
         getCityMap(mapboxSearchTerm);
         getCityStats(teleportSearchTerm);
+        getCityPhoto(mapboxSearchTerm);        
     });
 }
 
