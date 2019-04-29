@@ -92,3 +92,17 @@ div[id*="item-"] {
     margin-top: 7%;
     margin-bottom: 7%;
   }
+
+
+
+
+/* PHOTO API Styles
+   -------------------------------- */
+.photo-container {
+  width: 960px;
+  height: 540px;
+  background-image: url(assets/pdximg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

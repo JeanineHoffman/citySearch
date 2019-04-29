@@ -24,10 +24,9 @@
     <h1>City Look-up</h1>
   </header>
   <main role="main">
-    <section class="leadImg" role="img" aria-placeholder="image of a city">
-
-      <img src="assets/pdximg.JPG" alt="skyline view of Portland with Mount Hood in the background">
-    </section>
+    <section role="contentinfo" aria-label="Photo API results section" class="">
+      <div class="photo-container"></div>
+    </section>  
     <section role="form" aria-multiselectable="drop down forms">
       <form name="City, ST" id="city-search-form" value="">
         <select class="citySt" name="data types" aria-label="dropsdown data selection">
@@ -54,6 +53,7 @@
       <div id="results-list"></div>
     </section>
 
+  
   </main>
 
 
@@ -61,6 +61,7 @@
   <script src="index.js"></script>
   <script src="teleport.js"></script>
   <script src="map.js"></script>
+  <script src="photos.js"></script>
 </body>
 
 </html>
