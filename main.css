@@ -104,7 +104,7 @@ div[id*="item-"] {
 .photo-container {
   width: 960px;
   height: 540px;
-  background-image: url(assets/pdximg.jpg);
+  background-image: url(assets/pdximg.JPG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
