@@ -15,14 +15,8 @@ const loadMap = (cityCoordinates) => {
 
 
 function getCityMap(cityName) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  console.log(cityName);
->>>>>>> autocomplete-test
-=======
-  console.log(cityName);
->>>>>>> 743d090643060bec8d74ee0a8abaf6ca72b4aed1
+console.log(cityName);
+
   const searchURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
   const accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
   const queryString = `${encodeURIComponent(cityName)}.json?`;
@@ -38,6 +32,7 @@ function getCityMap(cityName) {
     })
     .then(cityGeoCodeInfo => {
       let coords = cityGeoCodeInfo.features[0].center;
+      console.log(cityGeoCodeInfo.features[0].center)
       loadMap(coords);
     });
 }
