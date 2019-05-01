@@ -6,7 +6,7 @@ function getCityPhoto(cityName) {
     let params = {
         client_id: '753157f93e4e369f2c7c4a8ea50bd6594cf8289302bdebdb5f4e180fac95809e',
         query: cityName,
-        orientation: "landscape",
+        orientation: "squarish",// can also use "landscape"
         page: 1,
     };
 

@@ -10,6 +10,11 @@ const loadMap = (cityCoordinates) => {
     center: cityCoordinates, // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
+
+  map.on('load', function() {
+    map.resize();
+  });
+
   $('.hidden').toggleClass('hidden');
 }
 

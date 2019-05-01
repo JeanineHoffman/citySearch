@@ -19,45 +19,81 @@
 </head>
 
 <body>
-  <header role="banner" aria-label="title banner">
+  <section role="contentinfo" aria-label="City look-up banner image" class="">
+    <div class="banner-container"></div>
+  </section>
+  
+  <header aria-label="City Look-up">
     <!-- working title -->
     <h1>City Look-up</h1>
-    <p>Check out the liveability statistics and a zoomable map for cities you may be thinking about relocating to for work, family, or simply a wish to re-settle someplace new. Let City Look-up help you narrow your choices or just learn a bit more about each city.</p>
-    <p>Select your city below and begin your search!</p>
   </header>
+
+  <div style="max-width:1000px; margin: 1em auto 2em auto; display: flex;" role="banner" aria-label="Intro and city selection">
+    <div class="description-block">
+        <p>Check out the liveability statistics and a zoomable map for cities you may be thinking about relocating to for work, family, or simply a wish to re-settle someplace new. Let City Look-up help you narrow your choices or just learn a bit more about each city.</p>
+        <strong>Select your city and begin your search!</strong>
+    </div>
+    <div class="dropdown-block">
+      <section role="form" aria-multiselectable="drop down forms">
+          <form name="City, ST" id="city-search-form" value="">
+            <select class="citySt" name="data types" aria-label="dropsdown data selection">
+              <option name="portland, or" value="portland-or">Portland, OR</option>
+              <option name="boston, ma" value="boston">Boston, MA</option>
+              <option name="new york, ny" value="new-york">NYC, NY</option>
+              <option name="des moines, ia" value="des-moines">Des-Moines, IA</option>
+              <option name="phoenix, az" value="phoenix">Phoenix, AZ</option>
+              <option name="salt lake city, ut" value="salt-lake-city">Salt Lake City, UT</option>
+              <option name="los angeles, ca" value="los-angeles">Los Angeles, CA</option>
+              <option name="san francisco, ca" value="san-francisco-bay-area">San Francisco, CA</option>
+              <option name="charlotte, nc" value="charlotte">Charlotte, NC</option>
+              <option name="seattle, wa" value="seattle">Seattle, WA</option>
+            </select>
+            <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
+          </form>
+        </section>      
+    </div>
+
+  </div>
   <main role="main">
-    <section role="contentinfo" aria-label="Photo API results section" class="">
+    <!-- <section role="contentinfo" aria-label="Photo API results section" class="hidden">
       <div class="photo-container"></div>
-    </section>  
-    <section role="form" aria-multiselectable="drop down forms">
-      <form name="City, ST" id="city-search-form" value="">
-        <select class="citySt" name="data types" aria-label="dropsdown data selection">
-          <option name="portland, or" value="portland-or">Portland, OR</option>
-          <!-- <option name="san jose, ca" value="san-jose">San Jose, CA</option> -->
-          <option name="boston, ma" value="boston">Boston, MA</option>
-          <option name="new york, ny" value="new-york">NYC, NY</option>
-          <option name="des moines, ia" value="des-moines">Des-Moines, IA</option>
-          <option name="phoenix, az" value="phoenix">Phoenix, AZ</option>
-          <option name="salt lake city, ut" value="salt-lake-city">Salt Lake City, UT</option>
-          <option name="los angeles, ca" value="los-angeles">Los Angeles, CA</option>
-          <option name="san francisco, ca" value="san-francisco-bay-area">San Francisco, CA</option>
-          <option name="charlotte, nc" value="charlotte">Charlotte, NC</option>
-          <option name="seattle, wa" value="seattle">Seattle, WA</option>
-        </select>
-        <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
-      </form>
+    </section> -->
+    
+    <section role="contentinfo" aria-label="Map and photo" class="visuals hidden">
+        <div class="photo-container"></div>
+        <div id="map" style="width:50%; height:400px;"></div>
+        <!-- <div id="mapOOO" class="mapboxgl-map" style="display:none;">
+            <div class="mapboxgl-canvas-container mapboxgl-interactive">
+              <canvas class="mapboxgl-canvas" tabindex="0"
+                width="500" height="800" style="position:absolute; width:100%; height:100%;"></canvas>
+            </div>
+            <div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0"
+              width="1000" height="800" style="position: absolute; width: 500px; height: 400px;"></canvas>
+          </div>            
+            <div class="mapboxgl-control-container">
+                <div class="mapboxgl-ctrl-top-left"></div>
+                <div class="mapboxgl-ctrl-top-right"></div>
+                <div class="mapboxgl-ctrl-bottom-left"></div>
+                <div class="mapboxgl-ctrl-bottom-right">
+                    <div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><a href="https://www.mapbox.com/about/maps/"
+                            target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/"
+                            target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map"
+                            href="https://www.mapbox.com/map-feedback/#/-74.38398875675689/40.09877248124104/11"
+                            target="_blank">Improve this map</a></div>
+                </div>
+            </div>
+        </div> -->
+        <div id="js-error-message"></div>
     </section>
-    <section role="contentinfo" aria-label="results section" class="hidden">
+
+    <!-- <section role="contentinfo" aria-label="results section" class="hidden">
       <div id="map"></div>
       <div id="js-error-message"></div>
-    </section>
+    </section> -->
     <section role="contentinfo" aria-label="Teleport API results section" class="hidden">
       <div id="results-list"></div>
-    </section>
-
-  
+    </section>  
   </main>
-
 
   <script src="//code.jquery.com/jquery.min.js"></script>
   <script src="index.js"></script>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.27.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.27.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 240px;
+        }
+
+        .button {
+            color: #fff;
+            background-color: #555;
+            padding: 1em;
+            margin: 1em;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            border-radius: 0.5em;
+            border-bottom: 2px #222 solid;
+            cursor: pointer;
+        }
+
+        #resizeMap {
+            top: 5em;
+        }
+
+        .hello-photo {
+            width: 100%;
+            height: 240px;
+            background-image: url(https://thinkful-nights-weekends-codename-camel.github.io/citysearchAPIhack/assets/pdximg.JPG);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .visuals {
+            display: flex;
+            flex-direction: column;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .visuals {
+                flex-direction: row;
+            }
+
+            #map {
+                width: 50%;
+                height: 400px;
+            }
+
+            .hello-photo {
+                width: 50%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id='map'></div> -->
+    <!-- <main> -->
+        <section class="visuals">
+            <div class="hello-photo"></div>
+            <div id="map" class="mapboxgl-map">
+                <div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0"
+                    width="960" height="800" style="position: absolute; width: 480px; height: 400px;"></canvas>
+                </div>
+                <div class="mapboxgl-control-container">
+                    <div class="mapboxgl-ctrl-top-left"></div>
+                    <div class="mapboxgl-ctrl-top-right"></div>
+                    <div class="mapboxgl-ctrl-bottom-left"></div>
+                    <div class="mapboxgl-ctrl-bottom-right">
+                        <div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><a href="https://www.mapbox.com/about/maps/"
+                                target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/"
+                                target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map"
+                                href="https://www.mapbox.com/map-feedback/#/-74.38398875675689/40.09877248124104/11"
+                                target="_blank">Improve this map</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- </main> -->
+    <div id='resizeDiv' class='button'>Resize container</div>
+    <div id='resizeMap' class='button'>Fix map</div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2l1dTUzcmgxMDJ0djJ0b2VhY2sxNXBiMyJ9.25Qs4HNEkHubd4_Awbd8Og';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+            center: [-74.50, 40], // starting position
+            zoom: 9 // starting zoom
+        });
+
+        var biggerSmaller;
+
+        map.on('load', function () {
+            var mapCanvas = document.getElementsByClassName('mapboxgl-canvas')[0];
+            var mapDiv = document.getElementById('map');
+            var breakButton = document.getElementById('resizeDiv');
+            var fixButton = document.getElementById('resizeMap');
+
+            breakButton.onclick = function () {
+                if (biggerSmaller !== 'smaller') {
+                    mapDiv.style.width = '50%';
+                    mapCanvas.style.width = '100%';
+                    biggerSmaller = 'smaller';
+                } else {
+                    mapDiv.style.width = '150%';
+                    mapCanvas.style.width = '100%';
+                    biggerSmaller = 'bigger';
+                }
+            }
+
+            fixButton.onclick = function () {
+                map.resize();
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
