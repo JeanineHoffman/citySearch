@@ -12,8 +12,6 @@ function watchForm() {
         const photoSearchTerm = `${value.name}, ${value.admin1DivisionCode}`;
         const teleportSearchTerm = value.uaSlug;
         $("#results-list").empty();
-        console.log(mapboxSearchTerm);
-        console.log(teleportSearchTerm);
         loadMap(mapboxSearchTerm);
         getCityStats(teleportSearchTerm);
         getCityPhoto(photoSearchTerm);        
