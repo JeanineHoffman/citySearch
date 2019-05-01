@@ -15,6 +15,10 @@ const loadMap = (cityCoordinates) => {
 
 
 function getCityMap(cityName) {
+<<<<<<< HEAD
+=======
+  console.log(cityName);
+>>>>>>> autocomplete-test
   const searchURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
   const accessToken = 'pk.eyJ1IjoiamVhbmluZWgiLCJhIjoiY2p1dW9pOWdhMGw0bTQzcWhnOTgyYXVraiJ9.ol6UTML3-IKNBMqdncW2Mw';
   const queryString = `${encodeURIComponent(cityName)}.json?`;
