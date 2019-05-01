@@ -2,8 +2,7 @@
 
 
 function watchForm() {
-    var $results = document.querySelector('.results');
-    var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
+   // var $results = document.querySelector('.results');
     TeleportAutocomplete.init('.my-input').on('change', function(value) { console.log(value);
     console.log(JSON.stringify(value, null, 2))
       //$('#city-search-form').change(event => {
@@ -17,6 +16,7 @@ function watchForm() {
         getCityPhoto(photoSearchTerm);        
     });
 }
+    //var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
 
 
 $(watchForm);
