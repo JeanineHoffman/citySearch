@@ -27,19 +27,25 @@
     </style>
   </head>
 <body>
-    <div class="tp-autocomplete"><input type="text" class="my-input tp-ac__input" placeholder="Pick your city" autocomplete="off"><ul class="tp-ac__list"></ul></div>
+    <div class="tp-autocomplete"><input id="city-search-form" type="text" class="my-input tp-ac__input" placeholder="Pick your city" autocomplete="off"><ul class="tp-ac__list"></ul></div>
 
     <h3>Result history:</h3>
-    <div class="results"></div>
+    <div id="results-list" class="results"></div>
 
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="teleport-autocomplete.thinkful.js"></script>
+    <script src="map.js"></script>
+    <script src="index.js"></script>
+    <script src="photos.js"></script>
+    <script src="teleport.js"></script>
+    
     <script>
-      var $results = document.querySelector('.results');
-      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
+    //  var $results = document.querySelector('.results');
+    // var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
 
-      TeleportAutocomplete.init('.my-input').on('change', function(value) {
-        appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
-      });
+    // TeleportAutocomplete.init('.my-input').on('change', function(value) { console.log(value);
+   // appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
+   //  });
     </script>
   
 
