@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>City Look-up</title>
+  <!-- Does all this JavaScript need to load before the page loads? -->
   <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -19,19 +20,31 @@
 </head>
 
 <body>
+  <!-- What's the aria-label for here? Do you want the screen reader to read out "title banner" to the user each time? -->
   <header role="banner" aria-label="title banner">
     <!-- working title -->
     <h1>City Look-up</h1>
     <p>Check out the liveability statistics and a zoomable map for cities you may be thinking about relocating to for work, family, or simply a wish to re-settle someplace new. Let City Look-up help you narrow your choices or just learn a bit more about each city.</p>
     <p>Select your city below and begin your search!</p>
   </header>
+  <!-- the <main> element has an implicit role of main. Unless you plan to support IE9-, this isn't needed. -->
   <main role="main">
+    <!-- The role "contentinfo" is usually reseved for meta information on the site: 
+          copyright, privacy statements, navigation info, etc.
+          The <footer> element has an automatic role of "contentinfo" -->
+    <!-- Again, not sure wht the aria-label is supposed to do here. Are you trying to maybe use aria-live instead? -->
     <section role="contentinfo" aria-label="Photo API results section" class="js-img-cont">
+      <!-- Although if you are trying to use aria-live, it would go here. -->
       <div class="photo-container"></div>
     </section>  
+    <!-- You have a section witha role of form, then immediately inside it have a form. Role not neded here. -->
     <section role="form" aria-multiselectable="drop down forms">
+      <!-- Form name is used to identify your submission to the backend. I'd choose an easier name to handle. -->
       <form name="City, ST" id="city-search-form" value="">
+        <!-- This is a perfect use of aria-label, but I would suggest making it more descriptive. 
+              What is the user supposed to do witht his dropdown selection? -->
         <select class="citySt" name="data types" aria-label="dropsdown data selection">
+          <!-- The formatting for you rnames and values should probably be reversed, or maybe both have the same format. Just a nitpick here.-->
           <option name="portland, or" value="portland-or">Portland, OR</option>
           <!-- <option name="san jose, ca" value="san-jose">San Jose, CA</option> -->
           <option name="boston, ma" value="boston">Boston, MA</option>
@@ -47,10 +60,13 @@
         <button type="submit" class="submitBtn" name="Start Search">Start Search</button>
       </form>
     </section>
+    <!-- Same as above. Contentinfo is a footer landamrk. -->
     <section role="contentinfo" aria-label="results section" class="hidden js-map">
+      <!-- Aria-live -->
       <div id="map"></div>
       <div id="js-error-message"></div>
     </section>
+    <!-- Footer -->
     <section role="contentinfo" aria-label="Teleport API results section" class="hidden">
       <div id="results-list"></div>
     </section>
@@ -58,7 +74,7 @@
   
   </main>
 
-
+  <!-- You used a few "contentinfo" landmarks, but lack an actual footer. Consider adding one. -->
   <script src="//code.jquery.com/jquery.min.js"></script>
   <script src="index.js"></script>
   <script src="teleport.js"></script>
